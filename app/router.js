@@ -7,8 +7,9 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('home', function() {
+  this.resource('home', function() {
     this.route('new-patient');
+    this.route('edit',{path:'edit/:home_id'});
   });
 });
 

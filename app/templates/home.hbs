@@ -1,36 +1,10 @@
-<nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-
-                    <span class="sr-only"> Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Healthcare App</a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <span class="nav navbar-nav">
-                    <li>{{#link-to 'home'}}Home{{/link-to}}</li>
-                    <li>{{#link-to 'home.new-patient'}}new Patient{{/link-to}}</li>
-                </span>
-            </div>
-        </div>
-</nav>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            {{outlet}}
-            {{#each model as |home|}}
-                <div class="well">
-
-                    <h3>{{home.name}}</h3>
-                    <h3>{{home.address}}</h3>
-                    <h3>{{home.fees}}</h3>
-                    <h3>{{home.date}}</h3>
-                </div>
-            {{/each}}
-        </div>
+{{outlet}}
+{{#each model as |home|}}
+    <div class="well">
+        <h4>{{#link-to 'home.edit' home.id}}{{home.name}}{{/link-to}}</h4>
+        <h3>{{home.date}}</h3>
+        <h3>{{home.address}}</h3>
+        <h3>{{home.fees}}</h3>
+        <button {{action 'deleteInfo' home.id }} class="btn btn-danger">Delete</button>
     </div>
-</div>
+{{/each}}
