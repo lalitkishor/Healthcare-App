@@ -2,6 +2,8 @@
   "name": "intern-project",
   "dependencies": {
     "ember": "~2.10.0",
-    "ember-cli-shims": "0.1.3"
+    "ember-cli-shims": "0.1.3",
+    "pouchdb": "^5.4.5",
+    "relational-pouch": "^1.4.4"
   }
 }

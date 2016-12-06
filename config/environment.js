@@ -4,6 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'intern-project',
     environment: environment,
+    contentSecurityPolicy:{'connect-src':"'self'wss://*.pouchdb.com"},
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -24,6 +25,7 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -43,7 +45,6 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
   }
 
   return ENV;
