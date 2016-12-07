@@ -10,6 +10,7 @@ const {
 export default Model.extend({
   name:DS.attr('string'),
   address:DS.attr('string'),
-  fees:DS.attr('string'),
-  date:DS.attr('date')
+  fees:DS.attr('number'),
+  date:DS.attr('date'),
+  payment:DS.attr('boolean'),
 });

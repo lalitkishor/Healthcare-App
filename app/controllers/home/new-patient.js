@@ -7,11 +7,13 @@ export default Ember.Controller.extend({
             var address = this.get('address');
             var date = this.get('date');
             var fees = this.get('fees');
+            var payment = this.get('payed');
             var newPatient = this.store.createRecord('home',{
                 name:name,
-                date:date,
+                date:new Date(date),
                 address:address,
-                fees:fees
+                fees:fees,
+                payment:payment
             });
             newPatient.save();
             this.setProperties({

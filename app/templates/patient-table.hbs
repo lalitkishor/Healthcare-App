@@ -1,0 +1,31 @@
+{{outlet}}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Patient name</th>
+      <th>Address</th>
+      <th>Fees</th>
+      <th>Date</th>
+      <th>Status</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |home|}}
+      <tr>
+        <td class="name">
+          {{home.name}}
+        </td>
+        <td class="address">{{home.address}}</td>
+        <td>RS.{{home.fees}}</td>
+        <td>{{format-date home.date}}</td>
+        <td>{{home.payment}}</td>
+        <td class="name">
+          {{#link-to 'home.edit' home.id}}{{home.name}}{{/link-to}}
+        </td>
+        <td><button {{action 'deleteInfo' home.id }} class="btn btn-danger">Delete</button></td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

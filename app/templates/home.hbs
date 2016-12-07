@@ -1,10 +1,1 @@
 {{outlet}}
-{{#each model as |home|}}
-    <div class="well">
-        <h4>{{#link-to 'home.edit' home.id}}{{home.name}}{{/link-to}}</h4>
-        <h3>{{home.date}}</h3>
-        <h3>{{home.address}}</h3>
-        <h3>{{home.fees}}</h3>
-        <button {{action 'deleteInfo' home.id }} class="btn btn-danger">Delete</button>
-    </div>
-{{/each}}

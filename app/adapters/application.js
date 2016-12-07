@@ -12,7 +12,7 @@ var db = new PouchDB('Patient');
  console.log("Error h tu"+remote);
 db.sync(remote, {
    live: true,   // do a live, ongoing sync
-   retry: false   // retry if the conection is lost
+   retry: true   // retry if the conection is lost
 
 });
 
