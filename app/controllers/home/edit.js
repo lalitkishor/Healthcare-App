@@ -9,14 +9,14 @@ export default Ember.Controller.extend({
             var date = this.get('model.date');
             var fees = this.get('model.fees');
             var payment = this.get('model.payment');
-            this.store.findRecord('home',id).then(function(){
+            this.store.findRecord('home',id).then(function(home){
                 home.set('name',name);
                 home.set('address',address);
                 home.set('date',date);
                 home.set('fees',fees);
                 home.set('payment',payment);
                 home.save();
-                self.transitionTo('/patient_table');
+                self.transitionToRoute('patient-table');
             });
         }
     }

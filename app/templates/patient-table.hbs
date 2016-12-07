@@ -6,7 +6,6 @@
       <th>Address</th>
       <th>Fees</th>
       <th>Date</th>
-      <th>Status</th>
       <th>Edit</th>
       <th>Delete</th>
     </tr>
@@ -18,9 +17,8 @@
           {{home.name}}
         </td>
         <td class="address">{{home.address}}</td>
-        <td>RS.{{home.fees}}</td>
+        <td>Rs.{{home.fees}}</td>
         <td>{{format-date home.date}}</td>
-        <td>{{home.payment}}</td>
         <td class="name">
           {{#link-to 'home.edit' home.id}}{{home.name}}{{/link-to}}
         </td>
